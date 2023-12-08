@@ -1,46 +1,58 @@
 import Icon from '../Icon/Icon'
 import Indicator from '../Indicator/Indicator'
 
-const Avatar = () => {
+interface AvatarProps {
+  avatar?: string
+  alt?: string
+  letter?: string
+  icon?: string
+  isSantaHatShowing?: boolean
+  indicator?: 'success' | 'warning' | 'error' | null
+}
+
+const Avatar = ({
+  avatar,
+  alt,
+  letter,
+  icon,
+  isSantaHatShowing,
+  indicator,
+}: AvatarProps) => {
   return (
-    <div>
-      <img
-        src="https://picsum.photos/seed/8938308/300/300"
-        alt="avatar-01"
-        className="h-18 w-18 rounded-full border-avatar border-white object-cover"
-      />
-
-      <div className="center h-18 w-18 rounded-full border-avatar border-white bg-spanishGreen text-2xl font-bold uppercase text-white">
-        A
-      </div>
-
-      <div className="center h-18 w-18 rounded-full border-avatar border-vistaBlue bg-spanishGreen text-white">
-        <Icon id="eyeClosed" size={32} />
-      </div>
-
-      <div className="relative inline-block">
+    <div className="relative inline-block">
+      {avatar && (
         <img
-          src="https://picsum.photos/seed/santa/300/300"
-          alt="avatar-with-santa-hat"
+          src={avatar}
+          alt={alt}
           className="h-18 w-18 rounded-full border-avatar border-white object-cover"
         />
+      )}
+
+      {letter && !avatar && (
+        <div className="center h-18 w-18 rounded-full border-avatar border-white bg-spanishGreen text-2xl font-bold uppercase text-white">
+          {letter}
+        </div>
+      )}
+
+      {icon && !avatar && !letter && (
+        <div className="center h-18 w-18 rounded-full border-avatar border-vistaBlue bg-spanishGreen text-white">
+          <Icon id={icon} size={32} />
+        </div>
+      )}
+
+      {isSantaHatShowing && (
         <img
           src="/images/santa-hat.png"
           alt="santa-hat"
           className="absolute -right-[15px] -top-[19px]"
         />
-      </div>
+      )}
 
-      <div className="relative inline-block">
-        <img
-          src="https://picsum.photos/seed/santa/300/300"
-          alt="avatar-with-santa-hat"
-          className="h-18 w-18 rounded-full border-avatar border-white object-cover"
-        />
+      {indicator && (
         <div className="absolute bottom-0 right-0">
-          <Indicator status="success" />
+          <Indicator status={indicator} />
         </div>
-      </div>
+      )}
     </div>
   )
 }
