@@ -1,4 +1,5 @@
 import Icon from '../Icon/Icon'
+import Indicator from '../Indicator/Indicator'
 
 const Avatar = () => {
   return (
@@ -13,27 +14,32 @@ const Avatar = () => {
         A
       </div>
 
-      <img
-        src="https://picsum.photos/seed/indicator/300/300"
-        alt="avatar-with-indicator"
-        className="h-18 w-18 rounded-full border-avatar border-white object-cover"
-      />
-
-      <div className="center h-18 w-18 rounded-full border-avatar border-white border-opacity-50 bg-spanishGreen fill-white">
-        <Icon id="eyeClosed" />
+      <div className="center h-18 w-18 rounded-full border-avatar border-vistaBlue bg-spanishGreen text-white">
+        <Icon id="eyeClosed" size={32} />
       </div>
 
-      <div className="relative">
+      <div className="relative inline-block">
         <img
           src="https://picsum.photos/seed/santa/300/300"
           alt="avatar-with-santa-hat"
           className="h-18 w-18 rounded-full border-avatar border-white object-cover"
         />
         <img
-          src="/santa-hat/santa-hat.png"
+          src="/images/santa-hat.png"
           alt="santa-hat"
-          className="absolute left-0 top-0"
+          className="absolute -right-[15px] -top-[19px]"
         />
+      </div>
+
+      <div className="relative inline-block">
+        <img
+          src="https://picsum.photos/seed/santa/300/300"
+          alt="avatar-with-santa-hat"
+          className="h-18 w-18 rounded-full border-avatar border-white object-cover"
+        />
+        <div className="absolute bottom-0 right-0">
+          <Indicator status="success" />
+        </div>
       </div>
     </div>
   )
