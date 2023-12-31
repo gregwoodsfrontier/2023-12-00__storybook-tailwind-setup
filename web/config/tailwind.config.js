@@ -19,6 +19,7 @@ module.exports = {
         blackPearl: '#071126' /* navy blue */,
         pastelMagenta: '#ff9dbf' /* pink */,
         vistaBlue: '#94d1b4' /*vistaBlue */,
+        fireEngineRed: '#C52424' /* dark red */,
       },
       height: {
         18: '72px',

@@ -15,19 +15,51 @@
  */
 
 @layer base {
+  label {
+    @apply font-handwriting text-xl uppercase tracking-tighter
+  }
+
+  label:has(+ input:placeholder-shown) {
+    @apply text-3xl absolute top-8 left-8 pointer-events-none transition-all duration-200;
+  }
+
+  label:has(+ input:focus),
+  label:has(+ input) {
+    @apply absolute top-2 left-2 text-xl
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='url'],
+  input[type='tel'],
+  input[type='password'],
+  input[type='number'] {
+    @apply h-[100px] w-full border-2 border-black px-7 font-sans text-2xl;
+  }
+
+  /* invalid label*/
+  label:has(+ input:invalid:not(:placeholder-shown)) {
+    @apply text-white
+  }
+
+  /* invalid input*/
+  input:invalid:not(:placeholder-shown) {
+    @apply bg-orangeRed border-fireEngineRed
+  }
+
   svg {
-    @apply fill-current
+    @apply fill-current;
   }
 }
 
 @layer components {
   .indicator {
-    @apply center h-6 w-6 rounded-full border-2
+    @apply center h-6 w-6 rounded-full border-2;
   }
 }
 
 @layer utilities {
   .center {
-    @apply flex justify-center items-center
+    @apply flex items-center justify-center;
   }
 }
