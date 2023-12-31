@@ -4,7 +4,7 @@ import { PasswordField, TextField, Label } from '@redwoodjs/forms'
 
 import Icon from '../Icon/Icon'
 
-const ShowHidePassword = ({ label, name }) => {
+const ShowHidePassword = ({ label, name, ...rest }) => {
   const [isPasswordShowing, setIsPasswordShowing] = useState(false)
 
   const handleClick = () => {
@@ -16,10 +16,10 @@ const ShowHidePassword = ({ label, name }) => {
       <Label name={name}>{label}</Label>
       {isPasswordShowing ? (
         //tex -input
-        <TextField name={name} placeholder="" required />
+        <TextField name={name} placeholder="" {...rest} />
       ) : (
         // else pw-input
-        <PasswordField name={name} placeholder="" required />
+        <PasswordField name={name} placeholder="" {...rest} />
       )}
 
       <button className="absolute right-6 top-8" onClick={handleClick}>
