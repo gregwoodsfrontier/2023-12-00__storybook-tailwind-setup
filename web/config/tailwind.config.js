@@ -3,6 +3,9 @@ module.exports = {
   content: ['src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        auth: 'url("/bg/bg__auth.svg")',
+      },
       borderWidth: {
         avatar: '6px',
       },
