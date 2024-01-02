@@ -51,6 +51,7 @@
     @apply bg-orangeRed border-fireEngineRed
   }
 
+
   svg {
     @apply fill-current;
   }
