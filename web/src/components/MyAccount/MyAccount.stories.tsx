@@ -12,15 +12,15 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import DropdownMenu from './DropdownMenu'
+import MyAccount from './MyAccount'
 
-const meta: Meta<typeof DropdownMenu> = {
-  component: DropdownMenu,
+const meta: Meta<typeof MyAccount> = {
+  component: MyAccount,
   tags: ['autodocs'],
 }
 
 export default meta
 
-type Story = StoryObj<typeof DropdownMenu>
+type Story = StoryObj<typeof MyAccount>
 
 export const Primary: Story = {}
