@@ -1,8 +1,11 @@
 const CheckBox = () => {
   return (
-    <div>
-      <h2>{'CheckBox'}</h2>
-      <p>{'Find me in ./web/src/components/CheckBox/CheckBox.tsx'}</p>
+    <div className="field">
+      <label htmlFor="checkbox" className="container">
+        Send Out an Event Reminder
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <span className="checkmark"></span>
+      </label>
     </div>
   )
 }
