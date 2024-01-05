@@ -1,11 +1,12 @@
-const CheckBox = () => {
+import { CheckboxField, Label } from '@redwoodjs/forms'
+
+const CheckBox = ({ label, name, ...rest }) => {
   return (
     <div className="field">
-      <label htmlFor="checkbox" className="container">
-        Send Out an Event Reminder
-        <input type="checkbox" name="checkbox" id="checkbox" />
-        <span className="checkmark"></span>
-      </label>
+      <CheckboxField name={name} id={name} {...rest} />
+      <Label name={name} className="container">
+        {label}
+      </Label>
     </div>
   )
 }

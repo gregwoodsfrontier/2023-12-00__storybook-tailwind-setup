@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         auth: 'url("/bg/bg__auth.svg")',
+        checked: 'url("/images/checkbox--checked.svg")',
+        unchecked: 'url("/images/checkbox--unchecked.svg")',
       },
       borderWidth: {
         avatar: '6px',

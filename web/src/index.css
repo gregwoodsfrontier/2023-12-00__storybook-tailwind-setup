@@ -41,9 +41,7 @@
     @apply h-[100px] w-full border-2 border-black px-7 font-sans text-2xl;
   }
 
-  input[type="checkbox"] {
-    @apply hidden
-  }
+
 
   /* invalid label*/
   label:has(+ input:invalid:not(:placeholder-shown)) {
@@ -55,6 +53,23 @@
     @apply bg-orangeRed border-fireEngineRed
   }
 
+  /* checkbox */
+  input[type="checkbox"] {
+    @apply hidden
+  }
+
+  input[type="checkbox"] + label {
+    @apply flex items-center gap-4 cursor-pointer
+  }
+
+  input[type="checkbox"] + label:before {
+    @apply content-[''] w-10 h-10 bg-unchecked
+  }
+
+  input[type="checkbox"]:checked + label:before {
+    @apply content-[''] w-10 h-10 bg-checked
+  }
+
 
   svg {
     @apply fill-current;
@@ -62,6 +77,10 @@
 }
 
 @layer components {
+  .field {
+    @apply mb-4
+  }
+
   .indicator {
     @apply center h-6 w-6 rounded-full border-2;
   }
