@@ -19,6 +19,11 @@ import CheckBox from './CheckBox'
 const meta: Meta<typeof CheckBox> = {
   component: CheckBox,
   tags: ['autodocs'],
+  parameters: {
+    backgrounds: {
+      default: 'silverTree',
+    },
+  },
 }
 
 export default meta
