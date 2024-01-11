@@ -15,6 +15,8 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={AuthLayout}>
+        <Route path="/accept" page={AcceptPage} name="accept" />
+        <Route path="/decline" page={DeclinePage} name="decline" />
         <Route path="/rsvp" page={RsvpPage} name="rsvp" />
       </Set>
       <Route notfound page={NotFoundPage} />

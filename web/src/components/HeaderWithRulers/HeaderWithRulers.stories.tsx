@@ -23,4 +23,9 @@ export default meta
 
 type Story = StoryObj<typeof HeaderWithRulers>
 
-export const Primary: Story = {}
+export const WhiteRSVP: Story = {
+  args: {
+    heading: 'RSVP',
+    className: 'text-white',
+  },
+}

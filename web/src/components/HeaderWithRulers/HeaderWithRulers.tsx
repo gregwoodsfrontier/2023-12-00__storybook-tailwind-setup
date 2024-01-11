@@ -1,12 +1,9 @@
-const HeaderWithRulers = () => {
+const HeaderWithRulers = ({ className, heading }) => {
   return (
-    <div>
-      <h2>{'HeaderWithRulers'}</h2>
-      <p>
-        {
-          'Find me in ./web/src/components/HeaderWithRulers/HeaderWithRulers.tsx'
-        }
-      </p>
+    <div
+      className={`with-rulers font-condensed text-7xl uppercase ${className}`}
+    >
+      {heading}
     </div>
   )
 }
